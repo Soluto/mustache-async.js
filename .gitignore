@@ -8,3 +8,4 @@ test/render-test-browser.js
 npm-debug.log
 
 test/render-test-browser.js
+.idea/*
