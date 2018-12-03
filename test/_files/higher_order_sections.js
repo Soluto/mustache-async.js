@@ -2,8 +2,8 @@
   name: "Tater",
   helper: "To tinker?",
   bolder: function () {
-    return function (text, render) {
-      return text + ' => <b>' + render(text) + '</b> ' + this.helper;
+    return async function (text, render) {
+      return text + ' => <b>' + await render(text) + '</b> ' + this.helper;
     }
   }
 })
