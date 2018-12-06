@@ -88,8 +88,8 @@ function readTemplate (cb) {
   streamToStr(template, cb);
 }
 
-function render (cb, templateStr, jsonView) {
-  cb(Mustache.render(templateStr, jsonView, partials));
+async function render (cb, templateStr, jsonView) {
+  cb(await Mustache.render(templateStr, jsonView, partials));
 }
 
 function toStdout (cb, str) {
