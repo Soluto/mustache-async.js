@@ -5,10 +5,8 @@ describe('Mustache.render', function () {
     Mustache.clearCache();
   });
 
-  it('requires template to be a string', function () {
-    assert.throws(function () {
-      Mustache.render(['dummy template'], ['foo', 'bar']);
-    }, TypeError, 'Invalid template! Template should be a "string" but ' +
+  it('requires template to be a string', async function () {
+      await assert.isRejected(Mustache.render(['dummy template'], ['foo', 'bar']), TypeError, 'Invalid template! Template should be a "string" but ' +
                   '"array" was given as the first argument ' +
                   'for mustache#render(template, view, partials)');
   });
@@ -21,7 +19,7 @@ describe('Mustache.render', function () {
     (function indexClosure(test) {
         var view = eval(test.view);
 
-        it('knows how to render ' + test.name, function () {
+        it('knows how to render ' + test.name, async function () {
 
           var output;
           if (test.partial) {
@@ -30,7 +28,7 @@ describe('Mustache.render', function () {
             output = Mustache.render(test.template, view);
           }
 
-          assert.equal(output, test.expect);
+          assert.equal(await output, test.expect);
         });
     })(tests[i]);
 

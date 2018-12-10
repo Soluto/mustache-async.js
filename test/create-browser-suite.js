@@ -11,4 +11,9 @@ var _templateContent = fs.readFileSync(_testsTemplate).toString();
 var tests = renderHelper.getTests();
 var content = Mustache.render(_templateContent, JSON.stringify(tests));
 
-fs.writeFileSync(path.join(__dirname, 'render-test-browser.js'), content);
+
+async function run() {
+    fs.writeFileSync(path.join(__dirname, 'render-test-browser.js'), await content);
+}
+
+run();

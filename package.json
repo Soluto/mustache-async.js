@@ -40,16 +40,16 @@
     "test-render": "mocha  --reporter spec test/render-test",
     "pre-test-browser": "node test/create-browser-suite.js",
     "test-browser": "npm run pre-test-browser && zuul -- test/context-test.js test/parse-test.js test/scanner-test.js test/render-test-browser.js",
-    "test-browser-local": "npm run pre-test-browser && zuul --local 8080 -- test/context-test.js test/scanner-test.js test/parse-test.js test/render-test-browser.js"
+    "test-browser-local": "npm run pre-test-browser && zuul --no-coverage --local 8080 -- test/context-test.js test/scanner-test.js test/parse-test.js test/render-test-browser.js"
   },
   "devDependencies": {
-    "chai": "^3.4.0",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^5.9.0",
     "jshint": "^2.9.5",
-    "mocha": "^3.0.2",
+    "mocha": "^5.2.0",
     "uglify-js": "^3.4.6",
-    "zuul": "^3.11.0",
+    "zuul": "^3.12.0",
     "zuul-ngrok": "nolanlawson/zuul-ngrok#patch-1"
   },
   "spm": {
