@@ -7,12 +7,12 @@ describe('A new Mustache.Context', function () {
     context = new Context({ name: 'parent', message: 'hi', a: { b: 'b' } });
   });
 
-  it('is able to lookup properties of its own view', function () {
-    assert.equal(context.lookup('name'), 'parent');
+  it('is able to lookup properties of its own view', async function () {
+    assert.equal(await context.lookup('name'), 'parent');
   });
 
-  it('is able to lookup nested properties of its own view', function () {
-    assert.equal(context.lookup('a.b'), 'b');
+  it('is able to lookup nested properties of its own view', async function () {
+    assert.equal(await context.lookup('a.b'), 'b');
   });
 
   describe('when pushed', function () {
@@ -25,20 +25,20 @@ describe('A new Mustache.Context', function () {
       assert.equal(context.parent.view.name, 'parent');
     });
 
-    it('is able to lookup properties of its own view', function () {
-      assert.equal(context.lookup('name'), 'child');
+    it('is able to lookup properties of its own view', async function () {
+      assert.equal(await context.lookup('name'), 'child');
     });
 
-    it("is able to lookup properties of the parent context's view", function () {
-      assert.equal(context.lookup('message'), 'hi');
+    it("is able to lookup properties of the parent context's view", async function () {
+      assert.equal(await context.lookup('message'), 'hi');
     });
 
-    it('is able to lookup nested properties of its own view', function () {
-      assert.equal(context.lookup('c.d'), 'd');
+    it('is able to lookup nested properties of its own view', async function () {
+      assert.equal(await context.lookup('c.d'), 'd');
     });
 
-    it('is able to lookup nested properties of its parent view', function () {
-      assert.equal(context.lookup('a.b'), 'b');
+    it('is able to lookup nested properties of its parent view', async function () {
+      assert.equal(await context.lookup('a.b'), 'b');
     });
   });
 });
@@ -54,8 +54,8 @@ describe('A Mustache.Context', function () {
       context = new Context(view);
     });
 
-    it('is able to lookup a nested property', function () {
-      assert.equal(context.lookup('a.b'), view.a.b);
+    it('is able to lookup a nested property', async function () {
+      assert.equal(await context.lookup('a.b'), view.a.b);
     });
   });
 });
