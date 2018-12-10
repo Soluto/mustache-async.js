@@ -72,15 +72,15 @@ describe('Mustache spec compliance', function() {
     Mustache.clearCache();
   });
 
-  specFiles.forEach(function(specArea) {
+  specFiles.forEach(async function(specArea) {
     describe('- ' + specArea + ':', function() {
       var specs = getSpecs(specArea);
       specs.tests.forEach(function(test) {
         var it_ = (!noSkip && skipTests[specArea] && skipTests[specArea].indexOf(test.name) >= 0) ? it.skip : it;
-        it_(test.name + ' - ' + test.desc, function() {
+        it_(test.name + ' - ' + test.desc, async function() {
           if (test.data.lambda && test.data.lambda.__tag__ === 'code')
             test.data.lambda = eval('(function() { return ' + test.data.lambda.js + '; })');
-          var output = Mustache.render(test.template, test.data, test.partials);
+          var output = await Mustache.render(test.template, test.data, test.partials);
           assert.equal(output, test.expected);
         });
       });
