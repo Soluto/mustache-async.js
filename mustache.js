@@ -1,5 +1,5 @@
 /*!
- * mustache.js - Logic-less {{mustache}} templates with JavaScript
+ * mustache-async.js - Logic-less {{mustache}} templates with async view function support
  * http://github.com/janl/mustache.js
  */
 
@@ -462,6 +462,7 @@
         }
 
         if (isFunction(value)) { value = await value.call(this.view); }
+        if (isFunction(value)) { value = value.call(this.view); }
 
         return value;
     };
@@ -513,7 +514,7 @@
     Writer.prototype.render = async function render (template, view, partials, tags) {
         const tokens = this.parse(template, tags);
         const context = (view instanceof Context) ? view : new Context(view);
-        return await this.renderTokens(tokens, context, partials, template, tags);
+        return this.renderTokens(tokens, context, partials, template, tags);
     };
 
     /**
@@ -557,7 +558,7 @@
         // This function is used to render an arbitrary template
         // in the current context by higher-order sections.
         async function subRender (template) {
-            return await self.render(template, context, partials);
+            return self.render(template, context, partials);
         }
 
         if (!value) return;
@@ -646,7 +647,7 @@
                 'argument for mustache#render(template, view, partials)');
         }
 
-        return await defaultWriter.render(template, view, partials, tags);
+        return defaultWriter.render(template, view, partials, tags);
     };
 
     // This is here for backwards compatibility with 0.4.x.,
