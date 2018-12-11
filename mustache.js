@@ -461,7 +461,6 @@
             cache[name] = value;
         }
 
-        if (isFunction(value)) { value = await value.call(this.view); }
         if (isFunction(value)) { value = value.call(this.view); }
 
         return value;
