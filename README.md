@@ -1,4 +1,4 @@
-# mustache-async.js - Logic-less {{mustache}} templates with Async View Function Support
+# mustache-async.js - Logic-less {{mustache}} templates with async view function Support
 
 > What could be more logical awesome than no logic at all?
 
@@ -9,6 +9,8 @@ If you don't need to use async functions to generate substitution values, you sh
 
 [Mustache](http://mustache.github.com/) is a logic-less template syntax. It can be used for HTML, config files, source code - anything. It works by expanding tags in a template using values provided in a hash or object.
 Visit the [manpage](http://mustache.github.com/mustache.5.html) for the templating syntax.
+
+## Usage
 
 [mustache-async.js](https://github.com/Soluto/mustache-async.js) supports regular functions, async functions and Promises. Example:
 
@@ -25,6 +27,8 @@ const template = 'My name is {{fullName}}, I am an {{profession}}';
 console.log(await Mustache.render(template, view));
 //My name is Art Vandelay, I am an Architect
 ```
+
+
 
 ## Install
 
