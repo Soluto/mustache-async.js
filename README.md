@@ -2,7 +2,7 @@
 
 > What could be more logical awesome than no logic at all?
 
-[![Build Status](https://travis-ci.org/janl/mustache.js.svg?branch=master)](https://travis-ci.org/Soluto/mustache-async.js)
+[![Build Status](https://travis-ci.com/Soluto/mustache-async.js.svg?branch=master)](https://travis-ci.com/Soluto/mustache-async.js)
 
 [mustache-async.js](https://github.com/Soluto/mustache-async.js) is a fork of the [mustache.js](https://github.com/janl/mustache.js) template system, with async view function support.
 If you don't need to use async functions to generate substitution values, you should simply use [mustache.js](https://github.com/janl/mustache.js) which supports older browsers and older JS versions.
