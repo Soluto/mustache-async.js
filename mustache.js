@@ -592,7 +592,7 @@
     Writer.prototype.renderPartial = async function renderPartial (token, context, partials, tags) {
         if (!partials) return;
 
-        const value = isFunction(partials) ? await partials(token[1]) : partials[token[1]];
+        const value = isFunction(partials[token[1]]) ? await partials[token[1]]() : partials[token[1]];
         if (value != null) { return this.renderTokens(this.parse(value, tags), context, partials, value); }
     };
 

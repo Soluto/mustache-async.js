@@ -62,7 +62,7 @@ describe('Mustache.render', function () {
     it('knows how to render ' + test.name, async () => {
       let output;
       if (test.partial) {
-        output = await Mustache.render(test.template, view, { partial: test.partial });
+        output = await Mustache.render(test.template, view, { partial: async () => test.partial });
       } else {
         output = await Mustache.render(test.template, view);
       }
