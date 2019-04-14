@@ -27,6 +27,7 @@ console.log(await Mustache.render(template, view));
 //My name is Art Vandelay, I am an Architect
 ```
 
+In this example, the `Mustache.render` function takes two parameters: 1) the [mustache](http://mustache.github.com/) template and 2) a `view` object that contains the data and code needed to render the template.
 
 
 ## Install
@@ -42,7 +43,6 @@ $ npm install mustache-async --save
 mustache-async.js is a new project, any contribution are welcome! Visit the [issues](https://github.com/Soluto/mustache-async.js/issues) page
 
 
-In this example, the `Mustache.render` function takes two parameters: 1) the [mustache](http://mustache.github.com/) template and 2) a `view` object that contains the data and code needed to render the template.
 
 ## API
 
