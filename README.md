@@ -1,3 +1,6 @@
+## DEPRECATED
+This repository is no longer maintained and has been archived. Feel free to browse the code, but please migrate to other solutions.
+
 # mustache-async.js - Logic-less {{mustache}} templates with async view function Support
 
 [![Build Status](https://travis-ci.com/Soluto/mustache-async.js.svg?branch=master)](https://travis-ci.com/Soluto/mustache-async.js)
